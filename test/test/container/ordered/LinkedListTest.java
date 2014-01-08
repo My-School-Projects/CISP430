@@ -24,7 +24,7 @@ public class LinkedListTest {
   LinkedList<String> list;
   
   @Before
-  public void setUp() {
+  public void setUp() throws Exception {
     arrayList = new java.util.ArrayList<>();
     for(int i = 0; i < 15; i++) {
       arrayList.add("example string 2");
@@ -37,7 +37,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testAdd() {
+  public void testAdd() throws Exception {
     assertThat(list.size(), is(100));
     ListIterator<String> iter = list.iterator();
     for(int i = 0; i < 100; i++) {
@@ -47,7 +47,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testClear() {
+  public void testClear() throws Exception {
     assertThat(list.size(), is(100));
     list.clear();
     assertThat(list.size(), is(0));
@@ -59,7 +59,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testForeach() {
+  public void testForeach() throws Exception {
     int i = 0;
     for(String s : list) {
       assertThat(s, is(""+i));
@@ -68,7 +68,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testToArray_Raw() {
+  public void testToArray_Raw() throws Exception {
     Object[] a = list.toArray();
     assertThat(a.length, is(100));
     int i = 0;
@@ -79,7 +79,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testToArray_Generic() {
+  public void testToArray_Generic() throws Exception {
     String[] a = new String[100];
     list.toArray(a);
     {
@@ -105,7 +105,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testDefaultConstructor() {
+  public void testDefaultConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>();
     assertThat(list.isEmpty(), is(true));
     assertThat(list.size(), is(0));
@@ -115,7 +115,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testSizeConstructor() {
+  public void testSizeConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(5);
     assertThat(list.size(), is(5));
     ListIterator<String> iter = list.iterator();
@@ -128,7 +128,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testSizeAndValueConstructor() {
+  public void testSizeAndValueConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(10, "example string 1");
     assertThat(list.size(), is(10));
     ListIterator<String> iter = list.iterator();
@@ -141,7 +141,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void testCopyConstructor() {
+  public void testCopyConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(arrayList);
     assertThat(list.size(), is(15));
     ListIterator<String> iter = list.iterator();
