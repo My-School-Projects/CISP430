@@ -7,6 +7,8 @@ import java.util.Collection;
  * Michael Dorst
  * CISP 430 Data Structures
  * M Dixon
+ * 
+ * LinkedList.java
  */
 
 public class LinkedList<E extends Comparable<E>> implements Collection<E> {
