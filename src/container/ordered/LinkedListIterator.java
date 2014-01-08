@@ -60,14 +60,7 @@ public class LinkedListIterator<E extends Comparable<E>> implements ListIterator
   
   @Override
   public void remove() {
-    //TODO: add test for remove
-    if (lastReturned == null) {
-      throw new IllegalStateException();
-    } else {
-      lastReturned.previous.next = lastReturned.next;
-      lastReturned.next.previous = lastReturned.previous;
-      lastReturned = null;
-    }
+    throw new UnsupportedOperationException();
   }
   
   @Override
@@ -78,8 +71,7 @@ public class LinkedListIterator<E extends Comparable<E>> implements ListIterator
   
   @Override
   public void add(E e) {
-    //TODO: add test for add
-    //TODO: implement add
+    throw new UnsupportedOperationException();
   }
   
   LinkedListIterator(LinkedList<E>.Node<E> n) {
