@@ -4,9 +4,10 @@ import container.ordered.LinkedList;
 import container.ordered.ListIterator;
 import org.junit.Before;
 import org.junit.Test;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.CoreMatchers.is;
+
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
@@ -19,7 +20,7 @@ import static org.junit.Assert.fail;
  */
 public class LinkedListTest {
   
-  java.util.List<String> arrayList;
+  List<String> arrayList;
   LinkedList<String> emptyList;
   LinkedList<String> list;
   
