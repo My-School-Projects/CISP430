@@ -35,7 +35,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void add() {
+  public void testAdd() {
     assertThat(list.size(), is(100));
     ListIterator<String> iter = list.iterator();
     for(int i = 0; i < 100; i++) {
@@ -45,7 +45,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void clear() {
+  public void testClear() {
     assertThat(list.size(), is(100));
     list.clear();
     assertThat(list.size(), is(0));
@@ -57,7 +57,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void foreach() {
+  public void testForeach() {
     int i = 0;
     for(String s : list) {
       assertThat(s, is(""+i));
@@ -66,7 +66,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void toArray_Raw() {
+  public void testToArray_Raw() {
     Object[] a = list.toArray();
     assertThat(a.length, is(100));
     int i = 0;
@@ -77,7 +77,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void toArray_Generic() {
+  public void testToArray_Generic() {
     String[] a = new String[100];
     list.toArray(a);
     {
@@ -103,7 +103,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void defaultConstructor() {
+  public void testDefaultConstructor() {
     LinkedList<String> list = new LinkedList<>();
     assertThat(list.isEmpty(), is(true));
     assertThat(list.size(), is(0));
@@ -113,7 +113,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void sizeConstructor() {
+  public void testSizeConstructor() {
     LinkedList<String> list = new LinkedList<>(5);
     assertThat(list.size(), is(5));
     ListIterator<String> iter = list.iterator();
@@ -126,7 +126,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void sizeAndValueConstructor() {
+  public void testSizeAndValueConstructor() {
     LinkedList<String> list = new LinkedList<>(10, "example string 1");
     assertThat(list.size(), is(10));
     ListIterator<String> iter = list.iterator();
@@ -139,7 +139,7 @@ public class LinkedListTest {
   }
   
   @Test
-  public void copyConstructor() {
+  public void testCopyConstructor() {
     LinkedList<String> list = new LinkedList<>(arrayList);
     assertThat(list.size(), is(15));
     ListIterator<String> iter = list.iterator();
