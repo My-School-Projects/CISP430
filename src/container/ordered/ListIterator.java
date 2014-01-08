@@ -2,6 +2,11 @@ package container.ordered;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Michael Dorst
+ * CISP 430 Data Structures
+ * M Dixon
+ */
 public class ListIterator<E extends Comparable<E>> implements java.util.ListIterator<E> {
   
   private LinkedList<E>.Node<E> lastReturned;
