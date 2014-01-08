@@ -5,6 +5,7 @@ import container.ordered.ListIterator;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -26,7 +27,7 @@ public class LinkedListTest {
   
   @Before
   public void setUp() throws Exception {
-    arrayList = new java.util.ArrayList<>();
+    arrayList = new ArrayList<>();
     for(int i = 0; i < 15; i++) {
       arrayList.add("example string 2");
     }
