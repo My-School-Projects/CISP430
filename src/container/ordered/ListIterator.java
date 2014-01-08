@@ -17,18 +17,15 @@ public class ListIterator<E extends Comparable<E>> implements java.util.ListIter
   
   @Override
   public boolean hasNext() {
-    //TODO: write test for hasNext
     return next != null;
   }
   
   public boolean hasPrevious() {
-    //TODO: write test for hasPrevious
     return previous != null;
   }
   
   @Override
   public E next() {
-    //TODO: write test for next
     if (!hasNext()) {
       throw new NoSuchElementException();
     }
@@ -38,7 +35,6 @@ public class ListIterator<E extends Comparable<E>> implements java.util.ListIter
   }
   
   public E previous() {
-    //TODO: write test for previous
     if (!hasPrevious()) {
       throw new NoSuchElementException();
     }
