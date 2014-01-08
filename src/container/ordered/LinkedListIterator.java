@@ -1,5 +1,6 @@
 package container.ordered;
 
+import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -7,9 +8,9 @@ import java.util.NoSuchElementException;
  * CISP 430 Data Structures
  * M Dixon
  * 
- * ListIterator.java
+ * LinkedListIterator.java
  */
-public class ListIterator<E extends Comparable<E>> implements java.util.ListIterator<E> {
+public class LinkedListIterator<E extends Comparable<E>> implements ListIterator<E> {
   
   private LinkedList<E>.Node<E> lastReturned;
   private LinkedList<E>.Node<E> next;
@@ -81,7 +82,7 @@ public class ListIterator<E extends Comparable<E>> implements java.util.ListIter
     //TODO: implement add
   }
   
-  ListIterator(LinkedList<E>.Node<E> n) {
+  LinkedListIterator(LinkedList<E>.Node<E> n) {
     next = n;
   }
 }

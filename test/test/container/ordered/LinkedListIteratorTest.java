@@ -1,7 +1,7 @@
 package test.container.ordered;
 
 import container.ordered.LinkedList;
-import container.ordered.ListIterator;
+import container.ordered.LinkedListIterator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,9 +16,9 @@ import static org.junit.Assert.fail;
  * CISP 430 Data Structures
  * M Dixon
  * 
- * ListIteratorTest.java
+ * LinkedListIteratorTest.java
  */
-public class ListIteratorTest {
+public class LinkedListIteratorTest {
 
   LinkedList<String> emptyList;
   LinkedList<String> list;
@@ -35,7 +35,7 @@ public class ListIteratorTest {
   @Test
   public void testHasNext() throws Exception {
     {
-      ListIterator i = list.iterator();
+      LinkedListIterator i = list.iterator();
       for(int j = 0; j < 100; j++) {
         assertThat(i.hasNext(), is(true));
         i.next();
@@ -47,7 +47,7 @@ public class ListIteratorTest {
   @Test
   public void testHasPrevious() throws Exception {
     {
-      ListIterator i = list.iterator();
+      LinkedListIterator i = list.iterator();
       assertThat(i.hasPrevious(), is(false));
       for(int j = 0; j < 100; j++) {
         i.next();
@@ -63,7 +63,7 @@ public class ListIteratorTest {
       fail("next() should throw an exception");
     } catch (NoSuchElementException e) {}
     {
-      ListIterator i = list.iterator();
+      LinkedListIterator i = list.iterator();
       for(int j = 0; j < 100; j++) {
         i.next();
       }
@@ -81,7 +81,7 @@ public class ListIteratorTest {
       fail("previous() should throw an exception");
     } catch (NoSuchElementException e) {}
     {
-      ListIterator i = list.iterator();
+      LinkedListIterator i = list.iterator();
       for(int j = 0; j < 100; j++) {
         i.next();
       }

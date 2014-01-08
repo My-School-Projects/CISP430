@@ -1,7 +1,7 @@
 package test.container.ordered;
 
 import container.ordered.LinkedList;
-import container.ordered.ListIterator;
+import container.ordered.LinkedListIterator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,7 +41,7 @@ public class LinkedListTest {
   @Test
   public void testAdd() throws Exception {
     assertThat(list.size(), is(100));
-    ListIterator<String> iter = list.iterator();
+    LinkedListIterator<String> iter = list.iterator();
     for(int i = 0; i < 100; i++) {
       assertThat(iter.next(), is(""+i));
     }
@@ -111,7 +111,7 @@ public class LinkedListTest {
     LinkedList<String> list = new LinkedList<>();
     assertThat(list.isEmpty(), is(true));
     assertThat(list.size(), is(0));
-    ListIterator<String> iter = list.iterator();
+    LinkedListIterator<String> iter = list.iterator();
     assertThat(iter.hasNext(), is(false));
     assertThat(iter.hasPrevious(), is(false));
   }
@@ -120,7 +120,7 @@ public class LinkedListTest {
   public void testSizeConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(5);
     assertThat(list.size(), is(5));
-    ListIterator<String> iter = list.iterator();
+    LinkedListIterator<String> iter = list.iterator();
     assertThat(iter.hasPrevious(), is(false));
     for(int i = 0; i < 5; i++) {
       assertThat(iter.hasNext(), is(true));
@@ -133,7 +133,7 @@ public class LinkedListTest {
   public void testSizeAndValueConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(10, "example string 1");
     assertThat(list.size(), is(10));
-    ListIterator<String> iter = list.iterator();
+    LinkedListIterator<String> iter = list.iterator();
     assertThat(iter.hasPrevious(), is(false));
     for(int i = 0; i < 10; i++) {
       assertThat(iter.hasNext(), is(true));
@@ -146,7 +146,7 @@ public class LinkedListTest {
   public void testCopyConstructor() throws Exception {
     LinkedList<String> list = new LinkedList<>(arrayList);
     assertThat(list.size(), is(15));
-    ListIterator<String> iter = list.iterator();
+    LinkedListIterator<String> iter = list.iterator();
     assertThat(iter.hasPrevious(), is(false));
     for(int i = 0; i < 15; i++) {
       assertThat(iter.hasNext(), is(true));

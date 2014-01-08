@@ -65,8 +65,8 @@ public class LinkedList<E extends Comparable<E>> implements Collection<E> {
   }
   
   @Override
-  public ListIterator<E> iterator() {
-    return new ListIterator<>(head);
+  public LinkedListIterator<E> iterator() {
+    return new LinkedListIterator<>(head);
   }
   
   @Override
