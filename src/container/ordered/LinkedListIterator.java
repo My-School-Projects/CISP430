@@ -12,7 +12,6 @@ import java.util.NoSuchElementException;
  */
 public class LinkedListIterator<E> implements ListIterator<E> {
   
-  private LinkedList<E>.Node<E> lastReturned;
   private LinkedList<E>.Node<E> next;
   private LinkedList<E>.Node<E> previous;
   private int index;
@@ -34,7 +33,7 @@ public class LinkedListIterator<E> implements ListIterator<E> {
     previous = next;
     next = next.next;
     index++;
-    return (lastReturned = previous).value;
+    return previous.value;
   }
   
   public E previous() {
@@ -44,7 +43,7 @@ public class LinkedListIterator<E> implements ListIterator<E> {
     next = previous;
     previous = previous.previous;
     index--;
-    return (lastReturned = next).value;
+    return next.value;
   }
   
   @Override
