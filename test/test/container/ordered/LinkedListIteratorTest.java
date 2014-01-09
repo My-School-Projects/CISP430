@@ -101,12 +101,28 @@ public class LinkedListIteratorTest {
   
   @Test
   public void testNextIndex() throws Exception {
-    
+    LinkedListIterator i = list.iterator();
+    for(int j = 0; j < 100; j++) {
+      assertThat(i.nextIndex(), is(j+1));
+      i.next();
+    }
+    for(int j = 100; j > 0; j--) {
+      assertThat(i.nextIndex(), is(j+1));
+      i.previous();
+    }
   }
   
   @Test
   public void testPreviousIndex() throws Exception {
-    
+    LinkedListIterator i = list.iterator();
+    for(int j = 0; j < 100; j++) {
+      assertThat(i.previousIndex(), is(j-1));
+      i.next();
+    }
+    for(int j = 100; j > 0; j--) {
+      assertThat(i.previousIndex(), is(j-1));
+      i.previous();
+    }
   }
   
   @Test

@@ -15,6 +15,7 @@ public class LinkedListIterator<E extends Comparable<E>> implements ListIterator
   private LinkedList<E>.Node<E> lastReturned;
   private LinkedList<E>.Node<E> next;
   private LinkedList<E>.Node<E> previous;
+  private int index;
   
   @Override
   public boolean hasNext() {
@@ -32,6 +33,7 @@ public class LinkedListIterator<E extends Comparable<E>> implements ListIterator
     }
     previous = next;
     next = next.next;
+    index++;
     return (lastReturned = previous).value;
   }
   
@@ -41,21 +43,18 @@ public class LinkedListIterator<E extends Comparable<E>> implements ListIterator
     }
     next = previous;
     previous = previous.previous;
+    index--;
     return (lastReturned = next).value;
   }
   
   @Override
   public int nextIndex() {
-    //TODO: add test for nextIndex
-    //TODO: implement nextIndex
-    return 0;
+    return index+1;
   }
   
   @Override
   public int previousIndex() {
-    //TODO: add test for previousIndex
-    //TODO: implement previousIndex
-    return 0;
+    return index-1;
   }
   
   @Override
