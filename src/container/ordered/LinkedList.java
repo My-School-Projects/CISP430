@@ -11,9 +11,9 @@ import java.util.Collection;
  * LinkedList.java
  */
 
-public class LinkedList<E extends Comparable<E>> implements Collection<E> {
+public class LinkedList<E> implements Collection<E> {
   
-  class Node<E extends Comparable<E>> {
+  class Node<E> {
     public E value;
     public Node<E> next;
     public Node<E> previous;

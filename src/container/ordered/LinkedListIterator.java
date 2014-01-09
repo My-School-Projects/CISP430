@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
  * 
  * LinkedListIterator.java
  */
-public class LinkedListIterator<E extends Comparable<E>> implements ListIterator<E> {
+public class LinkedListIterator<E> implements ListIterator<E> {
   
   private LinkedList<E>.Node<E> lastReturned;
   private LinkedList<E>.Node<E> next;
