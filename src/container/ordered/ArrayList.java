@@ -14,15 +14,15 @@ public class ArrayList<E> {
   /**
    * Data declarations
    */
-  Object[] data;
-  int size;
+  private Object[] data;
+  private int size;
   
   /**
    * Methods
    */
   
   @SuppressWarnings("unchecked")
-  E set(int index, E element) {
+  public E set(int index, E element) {
     if(index >= size) {
       size = index+1;
     }
@@ -39,35 +39,35 @@ public class ArrayList<E> {
   }
   
   @SuppressWarnings("unchecked")
-  E get(int index) {
+  public E get(int index) {
     return (E) data[index];
   }
   
-  int size() {
+  public int size() {
     return size;
   }
   
-  int capacity() {
+  public int capacity() {
     return data.length;
   }
   
   /**
    * Constructors
    */
-  ArrayList() {
+  public ArrayList() {
     this(10);
   }
-  ArrayList(int size) {
+  public ArrayList(int size) {
     data = new Object[size];
   }
-  ArrayList(int size, E value) {
+  public ArrayList(int size, E value) {
     this(size);
     for(int i = 0; i < size; i++) {
       data[i] = value;
     }
     this.size = size;
   }
-  ArrayList(Collection<? extends E> collection) {
+  public ArrayList(Collection<? extends E> collection) {
     this(collection.size());
     {
       int i = 0;

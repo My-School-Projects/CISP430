@@ -1,5 +1,6 @@
-package container.ordered;
+package test.container.ordered;
 
+import container.ordered.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -67,7 +68,7 @@ public class ArrayListTest {
   public void testCollectionConstructor() throws Exception {
     java.util.List<String> a = new java.util.ArrayList<>(100);
     for(int i = 0; i < 100; i++) {
-      a.add(i, ""+i);
+      a.add(i, "" + i);
     }
     array = new ArrayList<>(a);
     assertThat(array.size(), is(100));
