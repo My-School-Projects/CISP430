@@ -1,6 +1,7 @@
 package container.ordered;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Michael Dorst
@@ -9,7 +10,7 @@ import java.util.Collection;
  *
  * ArrayList.java
  */
-public class ArrayList<E> {
+public class ArrayList<E> implements Iterable<E> {
   
   /**
    * Data declarations
@@ -49,6 +50,15 @@ public class ArrayList<E> {
   
   public int capacity() {
     return data.length;
+  }
+  
+  /**
+   * Iterable
+   */
+  
+  @Override
+  public Iterator<E> iterator() {
+    return new ArrayListIterator<>(this);
   }
   
   /**
