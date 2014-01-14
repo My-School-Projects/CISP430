@@ -11,6 +11,10 @@ import java.util.NoSuchElementException;
  * LinkedListIterator.java
  */
 public class LinkedListIterator<E> implements ListIterator<E> {
+
+  /**
+   * Data members
+   */
   
   private LinkedList<E>.Node<E> next;
   private LinkedList<E>.Node<E> previous;

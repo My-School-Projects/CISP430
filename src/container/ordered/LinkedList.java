@@ -25,7 +25,7 @@ public class LinkedList<E> implements Collection<E> {
   }
   
   /**
-   * Data declarations
+   * Data members
    */
   private Node<E> head;
   private Node<E> tail;

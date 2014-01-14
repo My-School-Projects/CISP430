@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class ArrayList<E> implements Iterable<E> {
   
   /**
-   * Data declarations
+   * Data members
    */
   private Object[] data;
   private int size;
