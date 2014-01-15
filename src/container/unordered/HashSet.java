@@ -11,12 +11,27 @@ import container.ordered.LinkedList;
  * HashSet.java
  */
 public class HashSet<E> {
-
+  
   /**
    * Data members
    */
   private ArrayList<LinkedList<E>> table;
-
+  
+  /**
+   * Methods
+   */
+  
+  public int size() {
+    return table.size();
+  }
+  
+  public void add(E element) {
+    LinkedList<E> bucket = table.get(element.hashCode()%size());
+    if(bucket.contains(element))
+      return;
+    bucket.add(element);
+  }
+  
   /**
    * Constructors
    */
@@ -25,5 +40,8 @@ public class HashSet<E> {
   }
   public HashSet(int size) {
     table = new ArrayList<>(size);
+    for(int i = 0; i < size; i++) {
+      table.set(i, new LinkedList<E>());
+    }
   }
 }
