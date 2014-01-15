@@ -5,7 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Michael Dorst
@@ -24,7 +26,9 @@ public class HashSetTest {
   
   @Test
   public void testAdd() throws Exception {
+    assertFalse(hash.contains("hello"));
     hash.add("hello");
+    assertTrue(hash.contains("hello"));
   }
   
   @Test

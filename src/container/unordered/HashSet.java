@@ -32,6 +32,14 @@ public class HashSet<E> {
     bucket.add(element);
   }
   
+  public boolean contains(E element) {
+    LinkedList<E> bucket = table.get(element.hashCode()%size());
+    for(E e : bucket)
+      if(e.hashCode() == element.hashCode())
+        return true;
+    return false;
+  }
+  
   /**
    * Constructors
    */
