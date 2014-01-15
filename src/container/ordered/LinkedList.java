@@ -105,7 +105,12 @@ public class LinkedList<E> implements Collection<E> {
   
   @Override
   public boolean contains(Object o) {
-    throw new UnsupportedOperationException();
+    for(E e : this) {
+      if(e.equals(o)) {
+        return true;
+      }
+    }
+    return false;
   }
   
   @Override

@@ -10,6 +10,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -103,6 +104,13 @@ public class LinkedListTest {
         assertThat(a[i], is(""+i));
       }
       assertThat(a[100], is(equalTo(null)));
+    }
+  }
+  
+  @Test
+  public void testContains() throws Exception {
+    for(int i = 0; i < 100; i++) {
+      assertTrue(list.contains(""+i));
     }
   }
   
