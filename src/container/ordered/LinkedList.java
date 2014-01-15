@@ -80,11 +80,10 @@ public class LinkedList<E> implements Collection<E> {
   }
   
   @Override
+  @SuppressWarnings("unchecked")
   public <T> T[] toArray(T[] a) {
     if (a.length < size) {
-      @SuppressWarnings("unchecked")
-      T[] _a = (T[]) Array.newInstance(a.getClass().getComponentType(), size);
-      a = _a;
+      a = (T[]) Array.newInstance(a.getClass().getComponentType(), size);
     }
     {
       int i = 0;
